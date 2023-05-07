@@ -106,9 +106,9 @@ git push
 
 ![GitHub deployments](https://img.shields.io/github/deployments/Kwanhooo/inheritance-aio/Production?label=开发环境%20deploy&style=for-the-badge)
 
-![GitHub branch checks state](https://img.shields.io/github/checks-status/Kwanhooo/inheritance-aio/main?label=main%20%E5%88%86%E6%94%AF%E6%A3%80%E6%9F%A5&style=for-the-badge)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/Kwanhooo/inheritance-aio/master?label=master%20%E5%88%86%E6%94%AF%E6%A3%80%E6%9F%A5&style=for-the-badge)
 
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/Kwanhooo/inheritance-aio/main?style=for-the-badge)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/Kwanhooo/inheritance-aio/master?style=for-the-badge)
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Kwanhooo/inheritance-aio?style=for-the-badge)
 

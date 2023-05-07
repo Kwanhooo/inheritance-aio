@@ -1,7 +1,7 @@
 {
-  "name": "chuangcheng",
+  "name": "inheritance-aio",
   "version": "4.4.0",
-  "description": "知新馆传承中南前端",
+  "description": "知新馆传承中南一体机",
   "author": "zxg-web",
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -63,11 +63,6 @@
     "> 1%",
     "last 2 versions"
   ],
-  "engines": {
-    "node": ">=8.9",
-    "npm": ">= 3.0.0"
-  },
-  "license": "MIT",
   "main": ".eslintrc.js",
   "directories": {
     "test": "tests"
@@ -77,7 +72,7 @@
     "url": "git+https://github.com/zxg-zxxk/inheritance-front.git"
   },
   "bugs": {
-    "url": "https://github.com/zxg-zxxk/inheritance-front/issues"
+    "url": "https://github.com/zxg-zxxk/inheritance-aio/issues"
   },
-  "homepage": "https://github.com/zxg-zxxk/inheritance-front#readme"
+  "homepage": "https://github.com/zxg-zxxk/inheritance-aio#readme"
 }
