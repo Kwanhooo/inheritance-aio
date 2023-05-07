@@ -1,0 +1,21 @@
+.mySelect {
+    margin: -5px 0 0 0;
+    width: 20rem;
+    opacity: 1;
+    border: none;
+}
+
+.el-cascader {
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 50px;
+}
+
+@media screen and (max-width: 50rem) {
+    .mySelect {
+        width: 15rem;
+    }
+}

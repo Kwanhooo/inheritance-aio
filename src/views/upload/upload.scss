@@ -1,0 +1,173 @@
+@import "@/styles/mixin.scss";
+
+.upload-wrapper {
+    width: calc(100% - 2 * 80px);
+    margin-left: 80px;
+
+    .header {
+        height: 3rem;
+        border-bottom: 1px solid #dddddd;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .upload-description-title {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            border-bottom: 2px solid #409eff;
+            font-weight: bold;
+            padding-bottom: 0.5rem;
+        }
+
+        .confirm-btn-wrapper {
+            button {
+                margin-top: 2px;
+                border: none;
+                outline: none;
+                border-radius: 1rem;
+                width: 4rem;
+                height: 2rem;
+                cursor: pointer;
+                font-weight: bold;
+                background: #ff9235;
+                color: white;
+                transition: background-color 0.2s ease-in-out;
+            }
+
+            button:hover {
+                background: darken(#ff9235, 7%);
+            }
+        }
+    }
+
+    .body {
+        width: 100%;
+        //background-color: green;
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.5rem;
+
+        .description-wrapper {
+            flex: 1;
+            max-width: 22rem;
+            padding-left: 1rem;
+
+            .title {
+                font-weight: bold;
+                font-size: 1rem;
+                margin: 0 0 1.5rem 0;
+            }
+
+            .item {
+                padding: 0 0 .7rem .5rem;
+                border-bottom: 1px solid #dddddd;
+                margin-bottom: 2rem;
+
+                .type {
+                    font-weight: bold;
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .type-description {
+                    width: 100%;
+                    //background-color: gray;
+                    padding-right: .5rem;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .upload-main-wrapper {
+            flex: 1;
+
+            #upload-dragger {
+                margin-left: 2rem;
+                margin-bottom: 1.5rem;
+
+                .uploader-inner {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #eee;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .tips {
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        margin-bottom: 2.5rem;
+                    }
+
+                    button {
+                        outline: none;
+                        border-radius: 1rem;
+                        width: 6rem;
+                        height: 2.5rem;
+                        cursor: pointer;
+                        font-weight: bold;
+                        background: #fff;
+                        color: #ff9235;
+                        transition: background-color 0.2s ease-in-out;
+                        border: 1px solid #ff9235;
+
+                        &:hover {
+                            background: #ff9235;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .input-infos {
+                margin-left: 2rem;
+
+                .info-item {
+                    margin-bottom: 2rem;
+
+                    .title {
+                        font-weight: bold;
+                        font-size: 1rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    .basic-tags {
+                        transition: all 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+                        cursor: pointer;
+                        user-select: none;
+                        display: inline-block;
+                        border-radius: 5px;
+                        padding: .05rem .5rem;
+                        border: 1px solid #909399;
+                        min-width: 3rem;
+                        height: 1.6rem;
+                        text-align: center;
+                        font-size: .8rem;
+                        color: #666;
+                        margin-right: 1rem;
+
+                        &.active {
+                            background: #666;
+                            color: #fff;
+                        }
+
+                        @include tags;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 930px) {
+    .upload-wrapper {
+        .body {
+            .description-wrapper {
+                display: none;
+            }
+        }
+    }
+}

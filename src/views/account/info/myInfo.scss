@@ -1,0 +1,125 @@
+.cardContainer {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: calc(100% - 160px);
+    height: 100%;
+    background-image: linear-gradient(#ffe4cf, #fff);
+}
+
+
+.card {
+    display: flex;
+    position: absolute;
+    left: 60px;
+    top: 50px;
+    width: 100%;
+    height: 104%;
+    opacity: 1;
+    // background-color: orange;
+    overflow: auto;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    // background-color: skyblue;
+
+    .img {
+        background-color: #fff;
+        margin-bottom: 80px;
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        line-height: 400px;
+        text-align: center;
+        color: #ccc;
+    }
+
+    .nicknameContainer {
+        display: flex;
+        // background-color: purple;
+
+        .nickname {
+            font-size: 18px;
+            margin-right: 20px;
+            line-height: 50px;
+        }
+
+        .nicknameInput {
+            position: relative;
+            display: flex;
+            // flex-wrap: nowrap;
+            // justify-content: space-between;
+            border-radius: 15px;
+            padding-left: 15px;
+            width: 300px;
+            height: 50px;
+            background-color: #fff;
+
+            .input2 ::v-deep {
+                .el-input__inner {
+                  border: 0;
+                  border-bottom: 1px solid #ccc;
+                }
+        
+            }
+
+        }
+    }
+}
+
+.right {
+    background-color: #fff;
+    width: 40%;
+    height: 600px;
+    padding: 30px 50px;
+
+    .one,
+    .two {
+        margin-bottom: 15px;
+    }
+
+    .word,
+    .word2 {
+        display: block;
+        color: #ccc;
+    }
+
+    .word {
+        margin-bottom: 15px;
+    }
+
+    .accountNum {
+        font-size: 25px;
+        font-family: SimSun;
+    }
+
+    .trueName {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .six {
+        float: right;
+    }
+
+    .input ::v-deep {
+        .el-input__inner {
+          border: 0;
+          border-bottom: 1px solid #ccc;
+        }
+
+        .el-input .is-disabled .el-input__inner {
+            background-color: #fff!important;
+        }
+    }
+
+    .el-input.is-disabled ::v-deep .el-input__inner {
+        background-color: white;
+    }
+
+
+}

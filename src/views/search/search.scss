@@ -1,0 +1,185 @@
+.search-page-wrapper {
+    .headBar {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        width: calc(100% - 160px);
+        height: 140px;
+        overflow: hidden;
+        position: relative;
+        background: #ffe4cf;
+        border-bottom-right-radius: 20px 20px;
+        border-bottom-left-radius: 20px 20px;
+        box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    }
+
+    .myImg {
+        margin: -15px 0 0 100px;
+        width: 196px;
+        height: 100px;
+        overflow: hidden;
+        user-select: none;
+        align-self: flex-start;
+    }
+
+    .bar1 {
+        margin: -60px 0 0 0px;
+        width: calc(73% - 6px);
+        height: 60px;
+        overflow: hidden;
+        background: #fff0e4;
+        border-top-right-radius: 20px 20px;
+        border-bottom-right-radius: 40px 40px;
+        border-bottom-left-radius: 20px 20px;
+        align-self: flex-end;
+    }
+
+    .bar2 {
+        margin: 18px 150px 0 0;
+        width: 300px;
+        height: 127px;
+        overflow: hidden;
+        background-image: url(../../../public/pattern.svg);
+    }
+
+    .search {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: -50px 0 0 0;
+        text-align: center;
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .el-button {
+        margin: 12px 12px 0 0;
+        color: #ffffff;
+        font-size: medium;
+        width: 108px;
+        height: 40px;
+        left: calc(70% - 14px);
+        border: none;
+        background-color: #ff9235;
+    }
+
+
+    ::v-deep .el-input__inner {
+        height: 44px;
+        line-height: 64px;
+        border: none;
+        width: 88%;
+        float: left;
+    }
+
+    .el-input {
+        height: 64px;
+        background: white;
+        -webkit-box-shadow: 0 4px 25px rgb(0 0 0 / 10%);
+        box-shadow: 0 4px 25px rgb(0 0 0 / 10%);
+        border-radius: 32px;
+        border: 0;
+        width: calc(54% - 10px);
+        padding: 10px 30px 20px 30px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .el-divider--horizontal {
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 24px;
+        display: block;
+        height: 1px;
+        width: 86%;
+    }
+
+    .selector-wrapper {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: .5rem 125px .5rem 0;
+        background: #ffffff;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 0 0;
+        overflow: hidden;
+        transition: all 0.15s ease-in-out;
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .right {
+            max-width: 20rem;
+        }
+    }
+
+    .search-page-body {
+        margin-left: 80px;
+        width: calc(100% - 160px);
+        padding: 0 3.5rem;
+
+        .results-wrapper{
+            width: 100%;
+        }
+
+        .empty-tips {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666666;
+            margin-top: 4rem;
+        }
+
+        .reach-end {
+            color: #666;
+            margin-top: 6rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+
+.shadow {
+    box-shadow: 0 4px 10px rgba(0, 21, 41, 0.1);
+}
+
+@media screen and (max-width: 910px) {
+    .selector-wrapper {
+        padding-right: 0 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        .left {
+            .mySelect {
+                margin-left: 0 !important;
+            }
+        }
+
+        .right {
+            margin-top: .5rem;
+        }
+    }
+}

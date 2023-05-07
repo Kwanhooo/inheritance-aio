@@ -1,0 +1,100 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin scrollBar {
+    &::-webkit-scrollbar-track-piece {
+        background: #d3dce6;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #99a9bf;
+        border-radius: 20px;
+    }
+}
+
+@mixin relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin tags {
+    &.answer {
+        border: 1px solid #f56c6c;
+        color: #f56c6c;
+
+        &.active {
+            background: #f56c6c;
+            color: #fff;
+        }
+    }
+
+    &.paper {
+        border: 1px solid #e6a23c;
+        color: #e6a23c;
+
+        &.active {
+            background: #e6a23c;
+            color: #fff;
+        }
+    }
+
+    &.book {
+        border: 1px solid #67c23a;
+        color: #67c23a;
+
+        &.active {
+            background: #67c23a;
+            color: #fff;
+        }
+    }
+
+    &.note {
+        border: 1px solid #409eff;
+        color: #409eff;
+
+        &.active {
+            background: #409eff;
+            color: #fff;
+        }
+    }
+
+    &.course {
+        border: 1px solid #25d1a6;
+        color: #25d1a6;
+
+        &.active {
+            background: #25d1a6;
+            color: #fff;
+        }
+    }
+
+    &.quiz {
+        border: 1px solid #b974eb;
+        color: #b974eb;
+
+        &.active {
+            background: #b974eb;
+            color: #fff;
+        }
+    }
+
+    &.report {
+        border: 1px solid #ff7f27;
+        color: #ff7f27;
+
+        &.active {
+            background: #ff7f27;
+            color: #fff;
+        }
+    }
+}

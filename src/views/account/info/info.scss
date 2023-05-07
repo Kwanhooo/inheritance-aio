@@ -1,0 +1,290 @@
+.cardContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 104%;
+  background-image: linear-gradient(#ffe4cf, #fff);
+}
+
+.card {
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 104%;
+  opacity: 1;
+  // background-color: #ffffff;
+  overflow: auto;
+}
+
+// .topBar {
+//   /* topBar */
+//   position: absolute;
+//   left: 100px;
+//   top: 20px;
+//   width: 940px;
+//   height: 36px;
+//   opacity: 1;
+//   background: linear-gradient(180deg, #F7FBFF 0%, #ffffff 100%);
+//   border: 0.5px solid rgba(192, 210, 226, 0.34);
+//   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+// }
+
+.userManage {
+  /* 用户信息 */
+  position: absolute;
+  left: 18px;
+  top: 10px;
+  width: 70px;
+  height: 17px;
+  opacity: 1;
+  font-family: MiSans-Bold, serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 17px;
+  letter-spacing: 0;
+  color: #5B6388;
+}
+
+.logo1 {
+  /* 账号密码 */
+  position: absolute;
+  left: 560px;
+  top: 21px;
+  width: 64px;
+  height: 19px;
+  opacity: 1;
+  font-family: MiSans-Regular, serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 19px;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.logo2 {
+  /* 个人信息 */
+  position: absolute;
+  right: 24px;
+  top: 21px;
+  width: 64px;
+  height: 19px;
+  opacity: 1;
+  font-family: MiSans-Regular, serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 19px;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.myLine {
+  /* Line */
+  position: absolute;
+  left: 555px;
+  top: 48px;
+  width: 70px;
+  height: 1px;
+  opacity: 1;
+  border: 1.5px solid #3F74F9;
+  background-color: #3F74F9;
+}
+
+.myLine2 {
+  /* Line */
+  position: absolute;
+  right: 18px;
+  top: 50px;
+  width: 70px;
+  height: 1px;
+  opacity: 1;
+  border: 1.5px solid #3F74F9;
+  background-color: #3F74F9;
+}
+
+.account {
+  /* Rectangle*/
+  position: absolute;
+  left: 101px;
+  top: 56px;
+  width: 660px;
+  height: 600px;
+  border-radius: 0 0 8px 8px;
+  opacity: 1;
+  background: #FFFFFF;
+  box-shadow: 6px 6px 6px 6px #E9EBF6;
+}
+
+.personal {
+  /* 个人信息 */
+  position: absolute;
+  left: 761px;
+  top: 56px;
+  width: 279px;
+  height: 600px;
+  border-radius: 0 0 8px 8px;
+  opacity: 1;
+  background: #FFFFFF;
+  box-shadow: 6px 6px 6px 6px #E9EBF6;
+}
+
+.one {
+  /* 账号 */
+  position: absolute;
+  left: 141px;
+  top: 90px;
+  width: 164px;
+  height: 56px;
+  opacity: 1;
+}
+
+.accountNum {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 164px;
+  height: 34px;
+  opacity: 1;
+  font-family: MiSans-Medium, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0;
+  color: #333333;
+}
+
+.two {
+  /* 原密码 */
+  position: absolute;
+  left: 139px;
+  top: 195px;
+  width: 675px;
+  height: 72px;
+  opacity: 1;
+  border: NaNpx solid #C0D2E2;
+}
+
+.three {
+  /* 新密码 */
+  position: absolute;
+  left: 139px;
+  top: 287px;
+  width: 675px;
+  height: 72px;
+  opacity: 1;
+  border: NaNpx solid #C0D2E2;
+}
+
+.four {
+  /* 确认密码 */
+  position: absolute;
+  left: 139px;
+  top: 379px;
+  width: 675px;
+  height: 72px;
+  opacity: 1;
+  border: NaNpx solid #C0D2E2;
+}
+
+.five {
+  /* 按钮 */
+  position: absolute;
+  left: 139px;
+  top: 491px;
+  width: 165px;
+  height: 40px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.input {
+  /* Rectangle */
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 300px;
+  height: 45px;
+  opacity: 1;
+  background: #FAFBFC;
+  border: none;
+}
+
+.input2 {
+  /* Rectangle */
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 200px;
+  height: 47px;
+  opacity: 1;
+  background: #FAFBFC;
+  border: none;
+}
+
+.word {
+  /* 账号 */
+  position: absolute;
+  left: 0;
+  top: -8px;
+  width: 70px;
+  height: 14px;
+  opacity: 1;
+  font-family: MiSans-Regular, serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 14px;
+  letter-spacing: 0;
+  color: #889199;
+}
+
+.img {
+  /* 矩形 1 */
+  position: absolute;
+  left: 64.5px;
+  top: 96px;
+  width: 150px;
+  height: 150px;
+  border-radius: 25px;
+  opacity: 1;
+  background: #FFEFEF;
+}
+
+.six {
+  position: absolute;
+  left: 40px;
+  top: 321px;
+  width: 230px;
+  height: 300px;
+}
+
+.seven {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 230px;
+  height: 300px;
+}
+
+.orange {
+  position: absolute;
+  left: 64px;
+  top: 10px;
+  width: 15px;
+  height: 60px;
+  transform: rotate(180deg);
+  opacity: 1;
+  background: #FF8F1F;
+  border-radius: 0 0 10px 0;
+}
+
+.blue {
+  position: absolute;
+  left: 1065px;
+  top: 625px;
+  width: 15px;
+  height: 43.96px;
+  opacity: 1;
+  background: #232ED1;
+  border-radius: 0 0 10px 0;
+}
