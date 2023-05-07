@@ -7,14 +7,29 @@ _本项目的开发工作起始于：2023 年 5 月_
 ## 📔 自述
 
 > 传承中南一体机的前端集成
-> 
+>
 >2023 © [传承中南 - 一体机](https://aio.0xcafebabe.cn)
-> 
+>
 > Powered by [©NTD of ZhiXin, Org. or its affiliates.](https://github.com/zxg-zxxk)
+
+## 🔨 当前部署
+
+1. ### 开发环境 (env.development)
+
+- 主机：Vercel
+- 访问方式：*https://dev.aio.0xcafebabe.cn*
+- 方式：透过**Vercel**部署
+
+2. ### 生产环境 (env.production)
+
+- 主机：云服务器
+- 访问方式：*https://aio.0xcafebabe.cn*
+- 方式：构建后透过**Nginx**部署
 
 ## 💻 开发
 
 ### JavaScript 框架
+
 - Vue.js @2
 - Element UI @2
 - vuex
@@ -22,16 +37,18 @@ _本项目的开发工作起始于：2023 年 5 月_
 - core-js
 
 ### CSS 预处理器
+
 - sass
 - sass-loader
 
 ### 杂项
+
 - FontAwesome
 - Webpack
 
 ### 代码规范化工具
-- ESLint
 
+- ESLint
 
 ## 🦾 源码
 
@@ -73,20 +90,6 @@ git commit -m <type>[optional scope]: <description>
 # 3.推送
 git push
 ```
-
-## 🔨 部署
-
-1. ### 开发环境 (env.development)
-
-- 主机：Vercel
-- 访问方式：*https://dev.aio.0xcafebabe.cn*
-- 方式：透过**Vercel**部署
-
-2. ### 生产环境 (env.prod)
-
-- 主机：云服务器
-- 访问方式：*https://aio.0xcafebabe.cn*
-- 方式：构建后透过**Nginx**部署
 
 ## 🏃 项目状态
 
