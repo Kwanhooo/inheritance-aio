@@ -3,8 +3,16 @@ import Layout from '@/layout'
 const constantRoutes = [
     {
         path: '/login',
-        component: () => import('@/views/login/index'),
-        hidden: true
+        component: Layout,
+        redirect: '/login/index',
+        children: [
+            {
+                path: 'index',
+                name: '传承中南',
+                component: () => import('@/views/login/index'),
+                meta: { title: '', icon: 'el-icon-menu' }
+            }
+        ]
     },
     {
         path: '/404',

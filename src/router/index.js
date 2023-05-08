@@ -7,7 +7,7 @@ import { getSessionStorage } from '@/utils/storage'
 
 Vue.use(Router)
 
-const whiteList = ['/login']
+const whiteList = ['/login', '/login/index']
 
 const RouterConfig = {
     mode: 'history',
@@ -27,17 +27,13 @@ const router = new Router(RouterConfig)
 router.beforeEach(async(to, from, next) => {
     document.title = getPageTitle(to.meta.title)
     if (getSessionStorage('token')) {
-        if (to.path === '/login') {
-            next({ path: '/' })
-        } else {
-            next()
-        }
+        next()
     } else {
         if (whiteList.indexOf(to.path) !== -1) {
             next()
         } else {
             await store.dispatch('user/clear_userinfo')
-            next(`/login?redirect=${to.path}`)
+            next(`/login`)
         }
     }
 })
