@@ -49,6 +49,7 @@
 
 <script>
 import { getFileDetail } from '@/api/file-function'
+
 export default {
     data() {
         return {

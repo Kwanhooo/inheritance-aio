@@ -36,7 +36,9 @@ router.beforeEach(async(to, from, next) => {
             if (from.path === '/login') {
                 // 防止首页掉token时，无法自动登录
                 window.location.reload()
-            } else { next(`/login`) }
+            } else {
+                next(`/login`)
+            }
         }
     }
 })

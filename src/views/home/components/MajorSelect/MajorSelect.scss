@@ -1,25 +1,25 @@
 .mySelect {
-  margin: 0 3rem 0 100px;
-  //width: calc(60% - 10px);
-  width: 20rem;
-  opacity: 1;
-  border: none;
+    margin: 0 3rem 0 100px;
+    //width: calc(60% - 10px);
+    width: 20rem;
+    opacity: 1;
+    border: none;
 }
 
 .el-cascader {
-  border: 1px dotted #dcdfe6;
-  border-radius: 5px;
-  width: 100%;
-  height: 50px;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 50px;
+    border: 1px dotted #dcdfe6;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 50px;
 }
 
 
 // 当屏幕宽度小于 768px 时
 @media screen and (max-width: 50rem) {
-  .mySelect {
-    width: 15rem;
-  }
+    .mySelect {
+        width: 15rem;
+    }
 }

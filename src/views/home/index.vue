@@ -35,7 +35,8 @@
         <div v-show="loading" class="skeleton-wrapper">
           <el-skeleton :rows="10" animated :throttle="500" />
         </div>
-        <div v-if="(!docs || docs.length === 0) && !loading" class="empty-tips">暂无相关文档，请减少条件后再试！</div>
+        <div v-if="(!docs || docs.length === 0) && !loading" class="empty-tips">暂无相关文档，请减少条件后再试！
+        </div>
         <DocOverview v-for="doc in docs" v-show="!loading" :key="doc.fileId" :doc="doc" />
         <div v-for="index in 4" :key="'placeholder-block-' + index" class="placeholder-block" />
       </div>

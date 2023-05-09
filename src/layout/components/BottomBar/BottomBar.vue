@@ -10,7 +10,12 @@
     </div>
     <div class="bottom-bar-wrapper">
       <div class="left">
-        <img src="@/../public/bottom-logo.png" alt="logo" class="logo" @click.prevent="$router.push('/dashboard')">
+        <img
+          src="@/../public/bottom-logo.png"
+          alt="logo"
+          class="logo"
+          @click.prevent="$router.push('/dashboard')"
+        >
         <div class="item beian">
           <div class="title">备案信息</div>
           <div class="value">粤ICP备2022013690号-2</div>
