@@ -1,26 +1,27 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <sidebar class="sidebar-container" />
+    <!--    <sidebar class="sidebar-container" />-->
     <div class="main-container">
-      <navbar />
+      <!--      <navbar />-->
       <app-main />
     </div>
-    <div>
-      <bottom-bar />
-    </div>
+    <!--    <div>-->
+    <!--      <bottom-bar />-->
+    <!--    </div>-->
   </div>
 </template>
 
 <script>
-import { Navbar, Sidebar, AppMain, BottomBar } from './components'
+// import { Navbar, Sidebar, AppMain, BottomBar } from './components'
+import { AppMain } from './components'
 
 export default {
     name: 'Layout',
     components: {
-        Navbar,
-        Sidebar,
-        AppMain,
-        BottomBar
+        // Navbar,
+        // Sidebar,
+        AppMain
+        // BottomBar
     },
     computed: {
         sidebar() {

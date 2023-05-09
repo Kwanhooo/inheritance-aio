@@ -13,6 +13,7 @@ import '@/utils/icon'
 
 // 加载屏组件
 import Loading from './components/Loading/Loading.vue'
+
 Vue.component('loading', Loading)
 
 Vue.use(ElementUI)

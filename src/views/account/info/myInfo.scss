@@ -61,10 +61,10 @@
 
             .input2 ::v-deep {
                 .el-input__inner {
-                  border: 0;
-                  border-bottom: 1px solid #ccc;
+                    border: 0;
+                    border-bottom: 1px solid #ccc;
                 }
-        
+
             }
 
         }
@@ -108,12 +108,12 @@
 
     .input ::v-deep {
         .el-input__inner {
-          border: 0;
-          border-bottom: 1px solid #ccc;
+            border: 0;
+            border-bottom: 1px solid #ccc;
         }
 
         .el-input .is-disabled .el-input__inner {
-            background-color: #fff!important;
+            background-color: #fff !important;
         }
     }
 

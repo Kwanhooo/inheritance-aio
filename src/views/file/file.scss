@@ -45,37 +45,37 @@
                 color: #909399;
                 margin-right: .4rem;
 
-                &.answer{
+                &.answer {
                     border: 1px solid #f56c6c;
                     color: #f56c6c;
                 }
 
-                &.paper{
+                &.paper {
                     border: 1px solid #e6a23c;
                     color: #e6a23c;
                 }
 
-                &.book{
+                &.book {
                     border: 1px solid #67c23a;
                     color: #67c23a;
                 }
 
-                &.note{
+                &.note {
                     border: 1px solid #409eff;
                     color: #409eff;
                 }
 
-                &.course{
+                &.course {
                     border: 1px solid #25d1a6;
                     color: #25d1a6;
                 }
 
-                &.quiz{
+                &.quiz {
                     border: 1px solid #b974eb;
                     color: #b974eb;
                 }
 
-                &.report{
+                &.report {
                     border: 1px solid #ff7f27;
                     color: #ff7f27;
                 }
@@ -86,7 +86,7 @@
                 color: #626262;
             }
 
-            div{
+            div {
                 margin: 5px;
             }
         }
@@ -140,13 +140,14 @@
             margin: 10px;
         }
     }
+
     #box2-2 {
         display: flex;
         flex-direction: row;
         color: #929292;
         font-weight: bold;
 
-        img{
+        img {
             width: 20px;
             height: 20px;
         }
@@ -162,10 +163,10 @@
     iframe {
         width: 100%;
         height: 100%;
-        padding:10px;
+        padding: 10px;
         -moz-border-radius: 30px;
         -webkit-border-radius: 30px;
-        border-radius:30px;
+        border-radius: 30px;
         border-width: 0
     }
 }

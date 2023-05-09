@@ -1,0 +1,8 @@
+/* happyzcool */
+@font-face {
+    font-family: HappyZcool;
+    font-style: normal;
+    font-weight: 400;
+    src: local("HappyZcool"), url(happyzcool.woff2) format("woff2");
+}
+

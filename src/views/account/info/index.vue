@@ -3,47 +3,47 @@
     <div class="card">
       <!-- <div class="orange" /> -->
       <!-- <div class="topBar">
-        <span class="userManage">个人信息</span>
-      </div> -->
+              <span class="userManage">个人信息</span>
+            </div> -->
       <!-- <div class="personal">
-        <el-form ref="userinfoForm" :model="userinfoForm" :rules="userinfoRules">
-          <span class="logo2">头像昵称</span>
-          <hr class="myLine2">
-          <div class="img">
-            <img alt="" src="">
-          </div>
-          <div class="six">
-            <div style="position:absolute;left:0;top:-30px">
-              <el-form-item prop="name">
-                <span class="word">真实姓名</span>
-                <el-input v-model="userinfoForm.name" class="input2" />
-              </el-form-item>
-            </div>
-            <div class="seven">
-              <el-form-item prop="nickname">
-                <span class="word">昵称</span>
-                <el-input v-model="userinfoForm.nickname" class="input2" />
-              </el-form-item>
-            </div>
-            <div style="position:absolute;left:68px;top:140px">
-              <el-button
-                type="primary"
-                style="background-color:#FF8F1F;border-color: #FF8F1F;"
-                @click="updateUserInfo"
-              >保存
-              </el-button>
-            </div>
-          </div>
-        </el-form>
-      </div> -->
+              <el-form ref="userinfoForm" :model="userinfoForm" :rules="userinfoRules">
+                <span class="logo2">头像昵称</span>
+                <hr class="myLine2">
+                <div class="img">
+                  <img alt="" src="">
+                </div>
+                <div class="six">
+                  <div style="position:absolute;left:0;top:-30px">
+                    <el-form-item prop="name">
+                      <span class="word">真实姓名</span>
+                      <el-input v-model="userinfoForm.name" class="input2" />
+                    </el-form-item>
+                  </div>
+                  <div class="seven">
+                    <el-form-item prop="nickname">
+                      <span class="word">昵称</span>
+                      <el-input v-model="userinfoForm.nickname" class="input2" />
+                    </el-form-item>
+                  </div>
+                  <div style="position:absolute;left:68px;top:140px">
+                    <el-button
+                      type="primary"
+                      style="background-color:#FF8F1F;border-color: #FF8F1F;"
+                      @click="updateUserInfo"
+                    >保存
+                    </el-button>
+                  </div>
+                </div>
+              </el-form>
+            </div> -->
 
       <!-- <div class="account">
-        <el-form ref="passwordForm" :model="passwordForm" :rules="passwordRules">
-          <span class="logo1">账号密码</span>
-          <hr class="myLine">
-          <div class="one">
-            <span class="word">账号</span>
-            <span class="accountNum">{{ user_id }}</span>
+              <el-form ref="passwordForm" :model="passwordForm" :rules="passwordRules">
+                <span class="logo1">账号密码</span>
+                <hr class="myLine">
+                <div class="one">
+                  <span class="word">账号</span>
+                  <span class="accountNum">{{ user_id }}</span>
           </div>
           <div class="two">
             <el-form-item prop="oldPassword">
@@ -112,19 +112,37 @@
           <div class="three">
             <el-form-item prop="oldPassword">
               <span class="word2">旧密码</span>
-              <el-input ref="oldPassword" v-model="passwordForm.oldPassword" class="input" type="password" :disabled="notEdit" />
+              <el-input
+                ref="oldPassword"
+                v-model="passwordForm.oldPassword"
+                class="input"
+                type="password"
+                :disabled="notEdit"
+              />
             </el-form-item>
           </div>
           <div class="four">
             <el-form-item prop="newPassword1">
               <span class="word2">新密码</span>
-              <el-input ref="newPassword1" v-model="passwordForm.newPassword1" class="input" type="password" :disabled="notEdit" />
+              <el-input
+                ref="newPassword1"
+                v-model="passwordForm.newPassword1"
+                class="input"
+                type="password"
+                :disabled="notEdit"
+              />
             </el-form-item>
           </div>
           <div class="five">
             <el-form-item prop="newPassword2 form-item">
               <span class="word2">确认新密码</span>
-              <el-input ref="newPassword2" v-model="passwordForm.newPassword2" class="input" type="password" :disabled="notEdit" />
+              <el-input
+                ref="newPassword2"
+                v-model="passwordForm.newPassword2"
+                class="input"
+                type="password"
+                :disabled="notEdit"
+              />
             </el-form-item>
           </div>
           <div class="six">
@@ -198,7 +216,7 @@ export default {
     methods: {
         restPassword(e) {
             if (e.target.innerText === '修改') {
-            // 将上面的三个输入框改成可以输入
+                // 将上面的三个输入框改成可以输入
                 this.notEdit = false
                 e.target.innerText = '保存'
             } else {

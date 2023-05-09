@@ -1,11 +1,19 @@
 import Layout from '@/layout'
 
 const constantRoutes = [
-    {
-        path: '/login',
-        component: () => import('@/views/login/index'),
-        hidden: true
-    },
+    // {
+    //     path: '/login',
+    //     component: Layout,
+    //     redirect: '/login/index',
+    //     children: [
+    //         {
+    //             path: 'index',
+    //             name: '传承中南',
+    //             component: () => import('@/views/login/index'),
+    //             meta: { title: '', icon: 'el-icon-menu' }
+    //         }
+    //     ]
+    // },
     {
         path: '/404',
         component: () => import('@/views/exception/404'),
@@ -14,17 +22,28 @@ const constantRoutes = [
     {
         path: '/',
         component: Layout,
-        redirect: '/dashboard',
+        redirect: '/login',
         children: [
             {
                 path: 'dashboard',
                 name: '传承中南',
                 component: () => import('@/views/home/index'),
                 meta: { title: '', icon: 'el-icon-menu' }
+            },
+            {
+                path: 'login',
+                name: '传承中南',
+                component: () => import('@/views/login/index'),
+                meta: { title: '', icon: 'el-icon-menu' }
+            },
+            {
+                path: '/outline',
+                name: 'outline',
+                component: () => import('@/views/outline/index'),
+                hidden: true
             }
         ]
     },
-
     {
         path: '/search',
         name: '搜索',

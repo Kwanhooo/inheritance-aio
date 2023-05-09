@@ -1,120 +1,120 @@
 $navbarHeight: 70px;
 .navbar {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-  width: calc(100% - 160px);
-  height: $navbarHeight;
-  overflow: hidden;
-  background: #ffe4cf;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-
-  .hamburger-container {
-    flex-grow: 0;
-    order: 0;
-    line-height: $navbarHeight;
-    height: 100%;
-    float: left;
-    cursor: pointer;
-    transition: background 0.3s;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .right-menu {
     display: -webkit-flex;
     display: flex;
-    flex-grow: 2;
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0px 27px 0px 0;
-    order: 1;
-    height: 100%;
-    line-height: $navbarHeight;
-
-    .link {
-      margin: 0px 27px 0px 0;
-      user-select: none;
-      color: rgb(117, 111, 111);
-      font-size: 14px;
-      line-height: $navbarHeight;
-      cursor: pointer;
-
-      &:hover {
-        color: #c3b1b1;
-      }
-    }
-  }
-
-  .avatar-container {
-    flex-grow: 0.08;
-    order: 2;
-    height: 100%;
-    display: -webkit-flex;
-    display: flex;
     flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin: auto;
+    width: calc(100% - 160px);
+    height: $navbarHeight;
+    overflow: hidden;
+    background: #ffe4cf;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 
-    .avatar-wrapper {
-      display: flex;
-      display: -webkit-flex;
-      flex-wrap: nowrap;
-
-      .user-avatar {
-        user-select: none;
+    .hamburger-container {
+        flex-grow: 0;
+        order: 0;
+        line-height: $navbarHeight;
+        height: 100%;
+        float: left;
         cursor: pointer;
-        width: 50px;
-        height: 50px;
-        border-radius: 10px;
-        margin: 0 0 12px 0;
-      }
-
-      .el-icon-caret-bottom {
-        cursor: pointer;
-        margin: 25px 0 0px 9px;
-        font-size: 12px;
-        color: rgb(193, 176, 176);
-      }
+        transition: background 0.3s;
+        -webkit-tap-highlight-color: transparent;
     }
-  }
+
+    .right-menu {
+        display: -webkit-flex;
+        display: flex;
+        flex-grow: 2;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0px 27px 0px 0;
+        order: 1;
+        height: 100%;
+        line-height: $navbarHeight;
+
+        .link {
+            margin: 0px 27px 0px 0;
+            user-select: none;
+            color: rgb(117, 111, 111);
+            font-size: 14px;
+            line-height: $navbarHeight;
+            cursor: pointer;
+
+            &:hover {
+                color: #c3b1b1;
+            }
+        }
+    }
+
+    .avatar-container {
+        flex-grow: 0.08;
+        order: 2;
+        height: 100%;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .avatar-wrapper {
+            display: flex;
+            display: -webkit-flex;
+            flex-wrap: nowrap;
+
+            .user-avatar {
+                user-select: none;
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                margin: 0 0 12px 0;
+            }
+
+            .el-icon-caret-bottom {
+                cursor: pointer;
+                margin: 25px 0 0px 9px;
+                font-size: 12px;
+                color: rgb(193, 176, 176);
+            }
+        }
+    }
 }
 
 ::v-deep .el-menu {
-  margin: 8px;
+    margin: 8px;
 }
 
 ::v-deep .el-button {
-  color: #da7223;
-  font-size: medium;
-  width: 42px;
-  height: 42px;
-  border-radius: 100%;
-  padding: 0;
-  margin: 0 0 0 0;
-  background-color: #ffffff;
+    color: #da7223;
+    font-size: medium;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    padding: 0;
+    margin: 0 0 0 0;
+    background-color: #ffffff;
 }
 
 ::v-deep .el-input-group__append,
 .el-input-group__prepend {
-  background-color: #ffffff;
-  color: #eda2a2;
-  vertical-align: middle;
-  display: table-cell;
-  position: relative;
-  border: 1px solid #d5d7ddd5;
+    background-color: #ffffff;
+    color: #eda2a2;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    border: 1px solid #d5d7ddd5;
 
-  padding: 0 0;
-  white-space: nowrap;
+    padding: 0 0;
+    white-space: nowrap;
 }
 
 ::v-deep .el-input__inner {
-  height: 44px;
-  padding: 0 8px;
+    height: 44px;
+    padding: 0 8px;
 }

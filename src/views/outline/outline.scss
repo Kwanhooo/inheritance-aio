@@ -1,0 +1,71 @@
+@import "@/styles/variables";
+
+.wrapper {
+    user-select: none;
+}
+
+.top-bar {
+    padding: .5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 7vh;
+
+    .text {
+        font-size: 3vw;
+        font-weight: 500;
+        color: $aio-theme-2;
+        margin-left: .5rem;
+        font-family: HappyZcool, sans-serif;
+    }
+
+    .page-name-wrapper {
+        display: flex;
+        align-items: center;
+        //cursor: pointer;
+
+        .icon {
+            height: 100%;
+        }
+    }
+
+    .back-wrapper {
+        display: flex;
+        align-items: center;
+        height: 80%;
+        cursor: pointer;
+
+        .icon {
+            height: 80%;
+        }
+
+        .text {
+            color: $aio-theme-3;
+            font-size: 2vw;
+        }
+    }
+}
+
+.slogan {
+    width: 100%;
+    font-size: 4.5vw;
+    font-weight: 500;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    text-align: center;
+    color: $aio-theme-1;
+    user-select: none;
+    font-family: HappyZcool, sans-serif;
+}
+
+.description {
+    padding: 0 2vw;
+    margin: 0 13vw;
+    font-size: 1.5vw;
+    font-weight: 500;
+    font-family: Alimama DongFangDaKai, sans-serif;
+    color: $aio-theme-3;
+    line-height: 2.5vw;
+    max-height: 45vh;
+    overflow: auto;
+}
