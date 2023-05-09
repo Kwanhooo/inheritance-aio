@@ -3,72 +3,75 @@
 @import './transition.scss';
 @import './element-ui.scss';
 @import './sidebar.scss';
-
+@import '../assets/font/happyzcool/happyzcool.css';
+@import '../assets/font/alimama-dongfangdakai/alimama-dongfangdakai.css';
+@import '../assets/font/alibaba-puhuiti-2.0/alibaba-puhuiti-2.0.css';
+@import './scrollbar.scss';
 body {
-  height: 100%;
-  width: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-  margin: 0;
+    height: 100%;
+    width: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    margin: 0;
 }
 
 label {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 html {
-  height: 100%;
-  box-sizing: border-box;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 #app {
-  height: 100%;
+    height: 100%;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 a:focus,
 a:active {
-  outline: none;
+    outline: none;
 }
 
 a,
 a:focus,
 a:hover {
-  cursor: pointer;
-  color: inherit;
-  text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
 }
 
 div:focus {
-  outline: none;
+    outline: none;
 }
 
 .clearfix {
-  &:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
 }
 
 // main-container global css
 .app-container {
-  padding: 20px;
+    padding: 20px;
 }
 
 // 不允许用户拖动元素，除了链接
 *:not(a) {
-  -webkit-user-drag: none;
+    -webkit-user-drag: none;
 }
 
 // ElasticSearch高亮文本标签

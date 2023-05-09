@@ -1,0 +1,8 @@
+/* alimama-dongfangdakai */
+@font-face {
+	font-family: Alimama DongFangDaKai;
+	font-style: normal;
+	font-weight: 400;
+	src: local("Alimama DongFangDaKai"), local("AlimamaDongFangDaKai-Regular"), url(alimama-dongfangdakai.woff2) format("woff2");
+}
+

@@ -1,21 +1,37 @@
 // sidebar
-$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+$subMenuActiveText: #f4f4f5; //https://github.com/ElemeFE/element/issues/12951
 
-$menuBg:#ffffff;
-$menuHover:#e6f3ff;
+$menuBg: #ffffff;
+$menuHover: #e6f3ff;
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
+$subMenuBg: #1f2d3d;
+$subMenuHover: #001528;
 
 $sideBarWidth: 60px;
+
+$aio-black: #333333;
+$aio-white: #ffffff;
+$aio-gray: #8a8a8a;
+$aio-theme-1: #016dab;
+$aio-theme-2: #4c83b9;
+$aio-theme-3: #759bc7;
+$aio-theme-4: #99b3d5;
+$aio-theme-5: #bbcce3;
+$aio-theme-6: #dde5f1;
+$aio-theme-7: #ffffff;
+
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
-  subMenuActiveText: $subMenuActiveText;
-  menuBg: $menuBg;
-  menuHover: $menuHover;
-  subMenuBg: $subMenuBg;
-  subMenuHover: $subMenuHover;
-  sideBarWidth: $sideBarWidth;
+    subMenuActiveText: $subMenuActiveText;
+    menuBg: $menuBg;
+    menuHover: $menuHover;
+    subMenuBg: $subMenuBg;
+    subMenuHover: $subMenuHover;
+    sideBarWidth: $sideBarWidth;
+    aioBlack: $aio-black;
+    aioWhite: $aio-white;
+    aioGray: $aio-gray;
+    aioTheme: $aio-theme-1;
 }

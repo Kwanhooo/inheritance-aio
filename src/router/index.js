@@ -33,7 +33,10 @@ router.beforeEach(async(to, from, next) => {
             next()
         } else {
             await store.dispatch('user/clear_userinfo')
-            next(`/login`)
+            if (from.path === '/login') {
+                // 防止首页掉token时，无法自动登录
+                window.location.reload()
+            } else { next(`/login`) }
         }
     }
 })
