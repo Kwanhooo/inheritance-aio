@@ -8,7 +8,7 @@
       </div>
       <div class="back-wrapper" @click="$router.back()">
         <img class="icon" src="@/assets/svg/home.svg" alt="home">
-        <div class="text">返回主页</div>
+        <div class="text">返回上一页</div>
       </div>
     </div>
     <div class="slogan">

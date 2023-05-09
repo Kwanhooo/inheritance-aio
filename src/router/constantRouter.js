@@ -41,6 +41,12 @@ const constantRoutes = [
                 name: 'outline',
                 component: () => import('@/views/outline/index'),
                 hidden: true
+            },
+            {
+                path: '/classification',
+                name: 'classification',
+                component: () => import('@/views/classification/index'),
+                hidden: true
             }
         ]
     },

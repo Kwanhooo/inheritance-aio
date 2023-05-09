@@ -1,0 +1,87 @@
+@import "@/styles/variables.scss";
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .back-wrapper {
+        display: flex;
+        cursor: pointer;
+        margin-top: 10px;
+
+        .icon {
+            height: 1.8rem;
+        }
+
+        .text {
+            color: $aio-theme-3;
+            font-size: 2rem;
+            font-family: HappyZcool, sans-serif;
+        }
+    }
+
+    .class-title {
+        height: 10vh;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-top: 20px;
+        align-items: center;
+
+        .title-icon {
+            height: 4rem;
+        }
+
+        .title-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 4rem;
+            font-weight: 500;
+            color: $aio-theme-2;
+            font-family: HappyZcool, sans-serif;
+        }
+    }
+}
+
+
+.class-content {
+    margin: 80px 100px 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .item {
+        width: 20vw;
+        height: 20vh;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        .content-icon {
+            height: 4rem;
+            padding-right: 20px;
+            color: $aio-theme-2;
+        }
+
+        .content-text {
+            font-size: 2rem;
+            color: $aio-black;
+            font-family: Alibaba PuHuiTi, sans-serif;
+        }
+
+        .content-describe {
+            font-size: 0.9rem;
+            color: $aio-gray;
+            font-family: Alibaba PuHuiTi, sans-serif;
+        }
+    }
+}
