@@ -4,10 +4,11 @@ import { getAllTags } from '@/api/file-classification'
 const state = {
     total: 0,
     pageNum: 1,
-    pageSize: 12,
+    pageSize: 4,
     totalPage: 0,
     orderBy: 'time',
     activeThemeId: 0,
+    activeThemeName: '全部',
     docTypeSelect: [],
     indexArray: [],
     docs: [],
@@ -18,6 +19,9 @@ const state = {
 const mutations = {
     SET_ACTIVE_THEME_ID(state, id) {
         state.activeThemeId = id
+    },
+    SET_ACTIVE_THEME_NAME(state, name) {
+        state.activeThemeName = name
     },
     SET_DOC_TYPE_SELECT(state, docTypeSelect) {
         state.docTypeSelect = docTypeSelect

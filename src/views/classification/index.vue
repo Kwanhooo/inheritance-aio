@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="top-bar">
       <div v-if="type === 'SUBJECT'" class="class-title">
         <img class="title-icon" src="@/assets/svg/book.svg">
@@ -20,6 +20,7 @@
         v-for="item in classes"
         :key="item.id"
         class="item"
+        @click="handleItemClick(item)"
       >
         <font-awesome-icon class="content-icon" icon="fa-regular fa-file-lines" />
         <div class="content-wrapper">
@@ -53,6 +54,12 @@ export default {
                 this.classes = res.data
                 console.log(res.data)
             })
+        },
+        handleItemClick(item) {
+            this.$store.commit('overview/SET_ACTIVE_THEME_ID', Number(item.id))
+            this.$store.commit('overview/SET_ACTIVE_THEME_NAME', item.tagName)
+            this.$store.dispatch('overview/FetchDocs')
+            this.$router.push('/dashboard?type=' + this.type)
         }
     }
 }
