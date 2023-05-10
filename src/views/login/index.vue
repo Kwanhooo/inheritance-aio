@@ -17,13 +17,13 @@
     </div>
     <div class="catalog-wrapper">
       <div class="row">
-        <div class="item" @click="handleRedirect('/course')">
+        <div class="item" @click="handleRedirect('/classification?type=SUBJECT')">
           <div class="icon-wrapper">
             <img class="icon" src="@/assets/svg/book.svg">
           </div>
           <div class="text">课程科目类</div>
         </div>
-        <div class="item" @click="handleRedirect('/plan')">
+        <div class="item" @click="handleRedirect('/classification?type=COLUMN')">
           <div class="icon-wrapper">
             <img class="icon" src="@/assets/svg/blackboard.svg">
           </div>

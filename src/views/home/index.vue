@@ -1,21 +1,36 @@
 <template>
   <div>
-    <div class="headBar">
-      <img src="./../../../public/logoBar.png" class="myImg" alt="">
-      <div class="bar2" />
-      <div class="bar1" />
-    </div>
-    <div ref="search" class="search">
-      <el-input
-        v-model="keywords"
-        placeholder="请输入您想查询的文档的关键词"
-        class="search-input"
-        @keyup.enter.native="handleSearch()"
-      >
-        <el-button slot="suffix" round @click="handleSearch()">
-          Search&emsp;<i class="el-icon-search" />
-        </el-button>
-      </el-input>
+    <!--    <div class="headBar">-->
+    <!--      <img src="./../../../public/logoBar.png" class="myImg" alt="">-->
+    <!--      <div class="bar2" />-->
+    <!--      <div class="bar1" />-->
+    <!--    </div>-->
+    <!--    <div ref="search" class="search">-->
+    <!--      <el-input-->
+    <!--        v-model="keywords"-->
+    <!--        placeholder="请输入您想查询的文档的关键词"-->
+    <!--        class="search-input"-->
+    <!--        @keyup.enter.native="handleSearch()"-->
+    <!--      >-->
+    <!--        <el-button slot="suffix" round @click="handleSearch()">-->
+    <!--          Search&emsp;<i class="el-icon-search" />-->
+    <!--        </el-button>-->
+    <!--      </el-input>-->
+    <!--    </div>-->
+    <div class="top-bar">
+      <div class="page-name-wrapper">
+        <img v-if="this.$route.query.type === 'GUIDE'" class="icon" src="@/assets/svg/guide.svg" alt="guide">
+        <img v-else class="icon" src="@/assets/svg/system.svg" alt="system">
+        <div class="text" style="display: flex;align-items: center">
+          {{ this.$route.query.type === 'SUBJECT' ? '课程科目类' : '学业规划类' }}
+          <img src="@/assets/svg/right.svg" style="width: 1.5vw;margin:0 .5vw;">
+          <span v-if="activeThemeName" class="catalog-name">{{ activeThemeName }}</span>
+        </div>
+      </div>
+      <div class="back-wrapper" @click="$router.back()">
+        <img class="icon" src="@/assets/svg/home.svg" alt="home">
+        <div class="text">返回上一页</div>
+      </div>
     </div>
     <div ref="selectorWrapper" class="selector-wrapper">
       <div class="left">
@@ -28,14 +43,15 @@
     </div>
     <el-divider />
     <div class="mainPage">
-      <div class="theme-tab-wrapper">
-        <ThemeTab />
-      </div>
+<!--      <div class="theme-tab-wrapper">-->
+<!--        <ThemeTab />-->
+<!--      </div>-->
       <div class="docs-wrapper">
         <div v-show="loading" class="skeleton-wrapper">
           <el-skeleton :rows="10" animated :throttle="500" />
         </div>
-        <div v-if="(!docs || docs.length === 0) && !loading" class="empty-tips">暂无相关文档，请减少条件后再试！
+        <div v-if="(!docs || docs.length === 0) && !loading" class="empty-tips">
+          暂无相关文档，请减少条件后再试！
         </div>
         <DocOverview v-for="doc in docs" v-show="!loading" :key="doc.fileId" :doc="doc" />
         <div v-for="index in 4" :key="'placeholder-block-' + index" class="placeholder-block" />
@@ -66,7 +82,8 @@ export default {
     computed: {
         ...mapState({
             docs: state => state.overview.docs,
-            loading: state => state.overview.loading
+            loading: state => state.overview.loading,
+            activeThemeName: state => state.overview.activeThemeName
         })
     },
     created() {

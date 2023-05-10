@@ -1,49 +1,7 @@
-@import "@/styles/variables";
+@import "@/styles/topBar";
 
 .wrapper {
     user-select: none;
-}
-
-.top-bar {
-    padding: .5rem 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 7vh;
-
-    .text {
-        font-size: 3vw;
-        font-weight: 500;
-        color: $aio-theme-2;
-        margin-left: .5rem;
-        font-family: HappyZcool, sans-serif;
-    }
-
-    .page-name-wrapper {
-        display: flex;
-        align-items: center;
-        //cursor: pointer;
-
-        .icon {
-            height: 100%;
-        }
-    }
-
-    .back-wrapper {
-        display: flex;
-        align-items: center;
-        height: 80%;
-        cursor: pointer;
-
-        .icon {
-            height: 80%;
-        }
-
-        .text {
-            color: $aio-theme-3;
-            font-size: 2vw;
-        }
-    }
 }
 
 .slogan {
