@@ -13,6 +13,25 @@
  * limitations under the License.
  */
 
+ ::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 6px #dde5f1;
+     border-radius: 10px;
+     background-color: transparent;
+ }
+ 
+ ::-webkit-scrollbar {
+     width: 10px !important;
+     background-color: transparent;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+     background-color: #99b3d5;
+ }
+ 
+
+
 .textLayer {
   position: absolute;
   left: 0;
@@ -284,7 +303,7 @@
 
 .pdfViewer .page {
   direction: ltr;
-  width: 816px;
+  width: 1024px;
   height: 1056px;
   margin: 1px auto -8px;
   position: relative;
@@ -418,32 +437,32 @@
   --doorhanger-icon-opacity: 0.9;
 
   --main-color: rgba(12, 12, 13, 1);
-  --body-bg-color: rgba(237, 237, 240, 1);
+  --body-bg-color: rgb(255, 255, 255);
   --errorWrapper-bg-color: rgba(255, 74, 74, 1);
   --progressBar-color: rgba(10, 132, 255, 1);
   --progressBar-indeterminate-bg-color: rgba(221, 221, 222, 1);
   --progressBar-indeterminate-blend-color: rgba(116, 177, 239, 1);
-  --scrollbar-color: auto;
-  --scrollbar-bg-color: auto;
-  --toolbar-icon-bg-color: rgba(0, 0, 0, 1);
+  --scrollbar-color:  #016dab;
+  --scrollbar-bg-color:  rgba(237, 237, 240, 1);
+  --toolbar-icon-bg-color: #016dab;
 
   --sidebar-bg-color: rgba(245, 246, 247, 1);
   --toolbar-bg-color: rgba(249, 249, 250, 1);
-  --toolbar-border-color: rgba(204, 204, 204, 1);
+  --toolbar-border-color: rgb(231, 227, 227);
   --button-hover-color: rgba(221, 222, 223, 1);
-  --toggled-btn-bg-color: rgba(0, 0, 0, 0.3);
+  --toggled-btn-bg-color: rgba(0, 0, 0, 0.062);
   --toggled-hover-active-btn-color: rgba(0, 0, 0, 0.4);
-  --dropdown-btn-bg-color: rgba(215, 215, 219, 1);
+  --dropdown-btn-bg-color: rgba(240, 240, 246, 0.609);
   --separator-color: rgba(0, 0, 0, 0.3);
-  --field-color: rgba(6, 6, 6, 1);
+  --field-color: #016dab;
   --field-bg-color: rgba(255, 255, 255, 1);
-  --field-border-color: rgba(187, 187, 188, 1);
-  --findbar-nextprevious-btn-bg-color: rgba(227, 228, 230, 1);
+  --field-border-color: #016dab;
+  --findbar-nextprevious-btn-bg-color: rgba(227, 228, 230, 0.601);
   --treeitem-color: rgba(0, 0, 0, 0.8);
   --treeitem-hover-color: rgba(0, 0, 0, 0.9);
   --treeitem-selected-color: rgba(0, 0, 0, 0.9);
   --treeitem-selected-bg-color: rgba(0, 0, 0, 0.25);
-  --sidebaritem-bg-color: rgba(0, 0, 0, 0.15);
+  --sidebaritem-bg-color: rgba(0, 0, 0, 0.06);
   --doorhanger-bg-color: rgba(255, 255, 255, 1);
   --doorhanger-border-color: rgba(12, 12, 13, 0.2);
   --doorhanger-hover-color: rgba(237, 237, 237, 1);
@@ -821,6 +840,7 @@ select {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 #sidebarContainer {
@@ -831,7 +851,7 @@ select {
   width: var(--sidebar-width);
   visibility: hidden;
   z-index: 100;
-  background-color: #fee4d0;
+  background-color: #dde5f1;
   border-top: 1px solid rgba(51, 51, 51, 1);
   transition-duration: 200ms;
   transition-duration: var(--sidebar-transition-duration);
@@ -872,11 +892,13 @@ html[dir="rtl"] #outerContainer.sidebarOpen #sidebarContainer {
 
 #mainContainer {
   position: absolute;
-  top: 0;
+  top: -11%;
   right: 0;
   bottom: 0;
   left: 0;
   min-width: 320px;
+  height: 100%;
+  overflow: visible;
 }
 
 #sidebarContent {
@@ -906,7 +928,7 @@ html[dir="rtl"] #sidebarContent {
   bottom: 0;
   left: 0;
   outline: none;
-  background-color: #fff0e3;
+  background-color: #ffffff;
 }
 #viewerContainer:not(.pdfPresentationMode) {
   transition-duration: 200ms;
@@ -939,6 +961,7 @@ html[dir="rtl"]
   position: relative;
   left: 0;
   right: 0;
+  top: 100%;
   z-index: 9999;
   cursor: default;
 }
@@ -1076,7 +1099,7 @@ html[dir="rtl"] #sidebarResizer {
 
 #toolbarViewer {
   height: 40px;
-  background-color: #d8a063
+  background-color: #ffffff
 }
 
 #loadingBar {
@@ -1964,7 +1987,7 @@ html[dir="rtl"] .splitToolbarButton > .toolbarButton {
 }
 
 .dropdownToolbarButton:hover {
-  background-color: rgba(221, 222, 223, 1);
+  background-color: rgba(221, 222, 223, 0.649);
   background-color: var(--button-hover-color);
   z-index: 199;
 }
@@ -1972,13 +1995,13 @@ html[dir="rtl"] .splitToolbarButton > .toolbarButton {
 @media (prefers-color-scheme: dark) {
 
   .dropdownToolbarButton:hover {
-  background-color: rgba(102, 102, 103, 1);
+  background-color: rgba(102, 102, 103, 0.718);
   background-color: var(--button-hover-color);
   }
 }
 
 .toolbarButton.textButton:hover {
-  background-color: rgba(221, 222, 223, 1);
+  background-color: rgba(221, 222, 223, 0.718);
   background-color: var(--button-hover-color);
   z-index: 199;
 }
@@ -1986,13 +2009,13 @@ html[dir="rtl"] .splitToolbarButton > .toolbarButton {
 @media (prefers-color-scheme: dark) {
 
   .toolbarButton.textButton:hover {
-  background-color: rgba(102, 102, 103, 1);
+  background-color: rgba(102, 102, 103, 0.626);
   background-color: var(--button-hover-color);
   }
 }
 
 .toolbarButton.textButton:focus {
-  background-color: rgba(221, 222, 223, 1);
+  background-color: rgba(221, 222, 223, 0.656);
   background-color: var(--button-hover-color);
   z-index: 199;
 }
@@ -2000,7 +2023,7 @@ html[dir="rtl"] .splitToolbarButton > .toolbarButton {
 @media (prefers-color-scheme: dark) {
 
   .toolbarButton.textButton:focus {
-  background-color: rgba(102, 102, 103, 1);
+  background-color: rgba(102, 102, 103, 0.621);
   background-color: var(--button-hover-color);
   }
 }
@@ -2086,7 +2109,7 @@ html[dir="rtl"] .splitToolbarButtonSeparator {
   padding: 2px 6px 0;
   border: none;
   border-radius: 2px;
-  color: rgba(12, 12, 13, 1);
+  color: rgba(12, 12, 13, 0.608);
   color: var(--main-color);
   font-size: 12px;
   line-height: 14px;
@@ -2294,7 +2317,7 @@ html[dir="rtl"] #toolbarViewerLeft > .toolbarButton:first-child {
   width: 140px;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(215, 215, 219, 1);
+  background-color: rgba(215, 215, 219, 0.691);
   background-color: var(--dropdown-btn-bg-color);
   margin-top: 2px !important;
 }
@@ -2332,7 +2355,7 @@ html[dir="rtl"] .dropdownToolbarButton::after {
   margin: 0;
   padding: 1px 0 2px;
   border: none;
-  background-color: rgba(215, 215, 219, 1);
+  background-color: rgba(215, 215, 219, 0.599);
   background-color: var(--dropdown-btn-bg-color);
 }
 
@@ -2359,19 +2382,19 @@ html[dir="rtl"] .dropdownToolbarButton > select {
   padding-right: 4px;
 }
 .dropdownToolbarButton > select:hover {
-  background-color: rgba(221, 222, 223, 1);
+  background-color: rgba(221, 222, 223, 0.627);
   background-color: var(--button-hover-color);
 }
 @media (prefers-color-scheme: dark) {
 
   .dropdownToolbarButton > select:hover {
-  background-color: rgba(102, 102, 103, 1);
+  background-color: rgba(102, 102, 103, 0.629);
   background-color: var(--button-hover-color);
   }
 }
 
 .dropdownToolbarButton > select:focus {
-  background-color: rgba(221, 222, 223, 1);
+  background-color: rgba(221, 222, 223, 0.681);
   background-color: var(--button-hover-color);
 }
 
@@ -2950,7 +2973,7 @@ html[dir="rtl"] .toolbarField[type="checkbox"] {
   min-width: 16px;
   text-align: right;
   width: 40px;
-  background-color: #e0ab75;
+  background-color: #ffffff;
 }
 
 .toolbarField.pageNumber.visiblePageIsLoading {
@@ -3018,6 +3041,7 @@ html[dir="rtl"] #numPages.toolbarLabel {
   bottom: 0;
   padding: 10px 30px 0;
   overflow: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -3051,7 +3075,7 @@ html[dir="rtl"] .thumbnail {
 
 .thumbnailImage {
   border: 1px solid rgba(0, 0, 0, 0);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(91, 89, 89, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
   opacity: 0.8;
   z-index: 99;
   background-color: rgba(255, 255, 255, 1);
@@ -3152,7 +3176,7 @@ html[dir="rtl"] .treeItem > .treeItems {
   height: auto;
   margin-bottom: 1px;
   border-radius: 2px;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(105, 100, 100, 0.8);
   color: var(--treeitem-color);
   font-size: 13px;
   line-height: 15px;
