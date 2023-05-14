@@ -17,6 +17,11 @@
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         font-family: Alibaba PuHuiTi;
+        transition: all ease-in-out 0.3s;
+
+        &:focus{
+            border: 1px solid $aio-theme-3;
+        }
     }
 
     .search-btn {
