@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="file">
     <div class="header">
       <div id="box1">
@@ -44,6 +44,33 @@
         :src="`/pdfjs-2.7.570-es5-dist/web/viewer.html?file=` + file.previewPdf"
       />
     </div>
+  </div>
+</template> -->
+
+<template>
+  <div>
+    <div class="top-bar">
+      <div class="back-wrapper" @click="$router.back()">
+        <img class="icon" src="@/assets/svg/back.svg" alt="back">
+        <div class="text">返回</div>
+      </div>
+      <div class="download-wrapper">
+        <img class="icon"  src="@/assets/svg/download.svg" alt="download">
+        <div class="text">下载</div>
+      </div>
+    </div>
+
+    <div class="file-wrapper">
+      <div class="file-title">
+        <div class="title-text">{{ file.fileTitle }}</div></div>
+      <div class="file-content">
+        <iframe
+        v-if="!loading"
+        :src="`/pdfjs-2.7.570-es5-dist/web/viewer.html?file=` + file.previewPdf"
+      />
+      </div>
+    </div>    
+
   </div>
 </template>
 
