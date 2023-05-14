@@ -55,7 +55,7 @@
         <div class="text">返回</div>
       </div>
       <div class="download-wrapper">
-        <img class="icon"  src="@/assets/svg/download.svg" alt="download">
+        <img class="icon" src="@/assets/svg/download.svg" alt="download">
         <div class="text">下载</div>
       </div>
     </div>
@@ -65,11 +65,11 @@
         <div class="title-text">{{ file.fileTitle }}</div></div>
       <div class="file-content">
         <iframe
-        v-if="!loading"
-        :src="`/pdfjs-2.7.570-es5-dist/web/viewer.html?file=` + file.previewPdf"
-      />
+          v-if="!loading"
+          :src="`/pdfjs-2.7.570-es5-dist/web/viewer.html?file=` + file.previewPdf"
+        />
       </div>
-    </div>    
+    </div>
 
   </div>
 </template>
