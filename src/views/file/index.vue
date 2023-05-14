@@ -56,7 +56,7 @@
       </div>
       <div class="download-wrapper">
         <img class="icon" src="@/assets/svg/download.svg" alt="download">
-        <div class="text">下载</div>
+        <div class="text" @click="createQRCode">下载</div>
       </div>
     </div>
 
@@ -71,26 +71,58 @@
       </div>
     </div>
 
+    <el-dialog title="下载方式" :visible.sync="dialogVisible" class="download-box">
+      <div class="download-code">
+        <div ref="qrcode" class="qrcode" />
+        <div class="text">请使用浏览器进行下载</div>
+      </div>
+
+    </el-dialog>
+
   </div>
 </template>
 
 <script>
 import { getFileDetail } from '@/api/file-function'
+import QRCode from 'qrcodejs2'
 
 export default {
     data() {
         return {
             file: {},
-            loading: true
+            loading: true,
+            qrcode: null,
+            dialogVisible: false
         }
     },
     mounted() {
-        getFileDetail(this.$route.query.fileNo).then(res => {
-            this.file = res.data
-            this.file.fileTags = this.file.fileTag.split(',')
-            this.file.previewPdf = encodeURIComponent(this.file.previewPdf)
-            this.loading = false
-        })
+        this.refreshFileInfo()
+    },
+    methods: {
+        refreshFileInfo() {
+            getFileDetail(this.$route.query.fileNo).then(res => {
+                this.file = res.data
+                this.file.fileTags = this.file.fileTag.split(',')
+                this.file.previewPdf = encodeURIComponent(this.file.previewPdf)
+                this.loading = false
+            })
+        },
+        // 生成二维码
+        createQRCode() {
+            this.dialogVisible = true
+            getFileDetail(this.$route.query.fileNo).then(res => {
+                if (this.qrcode) {
+                    this.$refs.qrcode.innerHTML = ''
+                }
+                this.$nextTick(() => {
+                    const url = decodeURIComponent(res.data.previewPdf)
+                    this.qrcode = new QRCode(this.$refs.qrcode, {
+                        text: url,
+                        correctLevel: 3
+                    })
+                })
+            })
+        }
     }
 }
 </script>
