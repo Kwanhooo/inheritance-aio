@@ -70,13 +70,14 @@
 
 // 分页组件穿透
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #ff9235;
+    background-color: $aio-theme-1;
     color: white;
     cursor: pointer;
+    z-index: 999999;
 }
 
 .number:not(.active):hover {
-    color: #ff9235 !important;
+    color: $aio-theme-1 !important;
 }
 
 .el-radio-button .el-radio-button__inner {

@@ -1,22 +1,5 @@
 <template>
   <div>
-    <!--    <div class="headBar">-->
-    <!--      <img src="./../../../public/logoBar.png" class="myImg" alt="">-->
-    <!--      <div class="bar2" />-->
-    <!--      <div class="bar1" />-->
-    <!--    </div>-->
-    <!--    <div ref="search" class="search">-->
-    <!--      <el-input-->
-    <!--        v-model="keywords"-->
-    <!--        placeholder="请输入您想查询的文档的关键词"-->
-    <!--        class="search-input"-->
-    <!--        @keyup.enter.native="handleSearch()"-->
-    <!--      >-->
-    <!--        <el-button slot="suffix" round @click="handleSearch()">-->
-    <!--          Search&emsp;<i class="el-icon-search" />-->
-    <!--        </el-button>-->
-    <!--      </el-input>-->
-    <!--    </div>-->
     <div class="top-bar">
       <div class="page-name-wrapper">
         <img v-if="this.$route.query.type === 'GUIDE'" class="icon" src="@/assets/svg/guide.svg" alt="guide">
@@ -34,6 +17,7 @@
     </div>
     <div ref="selectorWrapper" class="selector-wrapper">
       <div class="left">
+        <doc-search />
         <major-select />
         <doc-type-select />
       </div>
@@ -43,9 +27,9 @@
     </div>
     <el-divider />
     <div class="mainPage">
-<!--      <div class="theme-tab-wrapper">-->
-<!--        <ThemeTab />-->
-<!--      </div>-->
+      <!--      <div class="theme-tab-wrapper">-->
+      <!--        <ThemeTab />-->
+      <!--      </div>-->
       <div class="docs-wrapper">
         <div v-show="loading" class="skeleton-wrapper">
           <el-skeleton :rows="10" animated :throttle="500" />
@@ -53,8 +37,8 @@
         <div v-if="(!docs || docs.length === 0) && !loading" class="empty-tips">
           暂无相关文档，请减少条件后再试！
         </div>
-        <DocOverview v-for="doc in docs" v-show="!loading" :key="doc.fileId" :doc="doc" />
-        <div v-for="index in 4" :key="'placeholder-block-' + index" class="placeholder-block" />
+        <DocCover v-for="(doc,index) in docs" v-show="!loading" :key="doc.fileId" :doc="doc" :index="index" />
+        <!--        <div v-for="index in 4" :key="'placeholder-block-' + index" class="placeholder-block" />-->
       </div>
       <div class="pagination-wrapper">
         <Pagination />
@@ -64,16 +48,16 @@
   </div>
 </template>
 <script>
-import ThemeTab from './components/ThemeTab/ThemeTab.vue'
-import DocOverview from '@/views/home/components/DocOverview'
 import DocTypeSelect from '@/views/home/components/DocTypeSelect/DocTypeSelect.vue'
 import MajorSelect from '@/views/home/components/MajorSelect/MajorSelect.vue'
 import Pagination from '@/views/home/components/Pagination'
 import { mapState } from 'vuex'
 import OrderSelect from '@/views/home/components/OrderSelect/OrderSelect'
+import DocCover from '@/views/home/components/DocCover/DocCover'
+import DocSearch from '@/views/home/components/DocSearch/DocSearch.vue'
 
 export default {
-    components: { MajorSelect, DocTypeSelect, ThemeTab, DocOverview, Pagination, OrderSelect },
+    components: { DocSearch, DocCover, MajorSelect, DocTypeSelect, Pagination, OrderSelect },
     data() {
         return {
             keywords: ''
