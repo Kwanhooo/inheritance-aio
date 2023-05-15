@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="file">
     <div class="header">
       <div id="box1">
@@ -45,25 +45,114 @@
       />
     </div>
   </div>
+</template> -->
+
+<template>
+  <div>
+    <div class="top-bar">
+      <div class="back-wrapper" @click="$router.back()">
+        <img class="icon" src="@/assets/svg/back.svg" alt="back">
+        <div class="text">返回</div>
+      </div>
+      <div class="download-wrapper">
+        <img class="icon" src="@/assets/svg/download.svg" alt="download">
+        <div class="text" @click="createQRCode">下载</div>
+      </div>
+    </div>
+
+    <div class="file-wrapper">
+      <div class="file-title">
+        <div class="title-text">{{ file.fileTitle }}</div></div>
+      <div class="file-content">
+        <iframe
+          v-if="!loading"
+          :src="`/pdfjs-2.7.570-es5-dist/web/viewer.html?file=` + file.previewPdf"
+        />
+      </div>
+    </div>
+
+    <el-dialog title="下载方式" :visible.sync="dialogVisible">
+      <div class="download-box">
+        <div class="download-code">
+          <div ref="qrcode" class="qrcode" />
+          <div class="text">请使用浏览器扫描进行下载</div>
+        </div>
+        <div class="download-aria2">
+          <img src="@/assets/image/udisk.png" alt="udisk" class="image" @click="downloadOfUdisk">
+          <div class="text">插入U盘后点击下载</div>
+        </div>
+      </div>
+    </el-dialog>
+
+  </div>
 </template>
 
 <script>
-import { getFileDetail } from '@/api/file-function'
+import { getFileDetail, downloadByAria2, checkDownloadStatus } from '@/api/file-function'
+import QRCode from 'qrcodejs2'
 
 export default {
     data() {
         return {
             file: {},
-            loading: true
+            loading: true,
+            qrcode: null,
+            dialogVisible: false
         }
     },
     mounted() {
-        getFileDetail(this.$route.query.fileNo).then(res => {
-            this.file = res.data
-            this.file.fileTags = this.file.fileTag.split(',')
-            this.file.previewPdf = encodeURIComponent(this.file.previewPdf)
-            this.loading = false
-        })
+        this.refreshFileInfo()
+    },
+    methods: {
+        refreshFileInfo() {
+            getFileDetail(this.$route.query.fileNo).then(res => {
+                this.file = res.data
+                this.file.fileTags = this.file.fileTag.split(',')
+                this.file.previewPdf = encodeURIComponent(this.file.previewPdf)
+                this.loading = false
+            })
+        },
+        // 生成二维码
+        createQRCode() {
+            this.dialogVisible = true
+            getFileDetail(this.$route.query.fileNo).then(res => {
+                if (this.qrcode) {
+                    this.$refs.qrcode.innerHTML = ''
+                }
+                this.$nextTick(() => {
+                    const url = decodeURIComponent(res.data.previewPdf)
+                    this.qrcode = new QRCode(this.$refs.qrcode, {
+                        text: url,
+                        correctLevel: 3
+                    })
+                })
+            })
+        },
+        // 调用aria2下载
+        downloadOfUdisk() {
+            getFileDetail(this.$route.query.fileNo).then(res => {
+                downloadByAria2(res.data.previewPdf).then(res => {
+                    const gid = res.data.result
+                    this.$customLoading.show('处理下载中...')
+                    const $this = this
+                    // 开启轮询，返回下载成功complete时结束
+                    const interval = setInterval(function() {
+                        checkDownloadStatus(gid).then(res => {
+                            const status = res.data.result.status
+                            if (status !== 'active') {
+                                clearInterval(interval)
+                                if (res.data.result.status === 'complete') {
+                                    $this.$customLoading.finishWithFeedback('下载完成，请取走U盘')
+                                } else {
+                                    $this.$customLoading.finishWithFeedback('下载失败，请检查是否插入U盘')
+                                }
+                            }
+                        })
+                    }, 1500)
+                })
+            })
+        }
+
     }
 }
 </script>

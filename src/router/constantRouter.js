@@ -47,7 +47,12 @@ const constantRoutes = [
                 name: 'classification',
                 component: () => import('@/views/classification/index'),
                 hidden: true
-            }
+            },
+            {
+                path: '/file',
+                component: () => import('@/views/file/index'),
+                hidden: true
+            },
         ]
     },
     {
@@ -92,11 +97,11 @@ const constantRoutes = [
             }
         ]
     },
-    {
-        path: '/file',
-        component: () => import('@/views/file/index'),
-        hidden: true
-    },
+    // {
+    //     path: '/file',
+    //     component: () => import('@/views/file/index'),
+    //     hidden: true
+    // },
     // 404 page must be placed at the end !!!
     { path: '*', redirect: '/404', hidden: true }
 ]
