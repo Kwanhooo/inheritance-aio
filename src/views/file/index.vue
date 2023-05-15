@@ -71,19 +71,24 @@
       </div>
     </div>
 
-    <el-dialog title="下载方式" :visible.sync="dialogVisible" class="download-box">
-      <div class="download-code">
-        <div ref="qrcode" class="qrcode" />
-        <div class="text">请使用浏览器进行下载</div>
+    <el-dialog title="下载方式" :visible.sync="dialogVisible">
+      <div class="download-box">
+        <div class="download-code">
+          <div ref="qrcode" class="qrcode" />
+          <div class="text">请使用浏览器扫描进行下载</div>
+        </div>
+        <div class="download-aria2">
+          <img src="@/assets/image/udisk.png" alt="udisk" class="image" @click="downloadOfUdisk">
+          <div class="text">插入U盘后点击下载</div>
+        </div>
       </div>
-
     </el-dialog>
 
   </div>
 </template>
 
 <script>
-import { getFileDetail } from '@/api/file-function'
+import { getFileDetail, downloadByAria2, checkDownloadStatus } from '@/api/file-function'
 import QRCode from 'qrcodejs2'
 
 export default {
@@ -122,7 +127,32 @@ export default {
                     })
                 })
             })
+        },
+        // 调用aria2下载
+        downloadOfUdisk() {
+            getFileDetail(this.$route.query.fileNo).then(res => {
+                downloadByAria2(res.data.previewPdf).then(res => {
+                    const gid = res.data.result
+                    this.$customLoading.show('处理下载中...')
+                    const $this = this
+                    // 开启轮询，返回下载成功complete时结束
+                    const interval = setInterval(function() {
+                        checkDownloadStatus(gid).then(res => {
+                            const status = res.data.result.status
+                            if (status !== 'active') {
+                                clearInterval(interval)
+                                if (res.data.result.status === 'complete') {
+                                    $this.$customLoading.finishWithFeedback('下载完成，请取走U盘')
+                                } else {
+                                    $this.$customLoading.finishWithFeedback('下载失败，请检查是否插入U盘')
+                                }
+                            }
+                        })
+                    }, 1500)
+                })
+            })
         }
+
     }
 }
 </script>

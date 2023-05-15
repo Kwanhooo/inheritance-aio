@@ -78,6 +78,10 @@
 }
 
 .download-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
     .download-code {
         width: 50%;
         display: flex;
@@ -88,6 +92,25 @@
         .qrcode {
             margin-bottom: 10px;
         }
+        .text {
+            color: $aio-gray;
+            font-size: 1.2rem;
+            font-family: Alibaba PuHuiTi, sans-serif;
+        }
+    }
+
+    .download-aria2 {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .image {
+            width: 70%;
+            cursor: pointer;
+        }
+
         .text {
             color: $aio-gray;
             font-size: 1.2rem;
